@@ -4,7 +4,7 @@
 >
 > ### 1. 语料库加载和词向量提取
 >
-> 见<Chinese-Wiki-words>文件夹，利用<wiki-words-loading>对原始文本进行清洗和预处理后，“word-vec.py”包含的基准模型可以提取出不同维度的词向量，“model2txt.py”将模型中的词向量输出为txt格式。
+> 见<Chinese-Wiki-words>文件夹，利用<wiki-words-loading>对原始文本进行清洗和预处理后，“word-vec.py”包含的基准模型可以提取出不同维度的词向量，“model2txt.py”将模型中的词向量输出为txt格式。具体过程参考https://github.com/liuwenqiang1202/wiki-word2vec
 >
 > ### 2. Resnet50提取中文字符图形信息
 >
@@ -20,7 +20,7 @@
 
 参考文献：
 
-1. https://github.com/liuwenqiang1202
+1. https://github.com/liuwenqiang1202/wiki-word2vec
 
 2. Shen Li, Zhe Zhao, Renfen Hu, Wensi Li, Tao Liu, Xiaoyong Du, <a href="http://aclweb.org/anthology/P18-2023"><em>Analogical Reasoning on Chinese Morphological and Semantic Relations</em></a>, ACL 2018.
 
