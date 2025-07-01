@@ -130,37 +130,37 @@ def main():
         gated_cross_word_vectors[word] = adjust_word_vector(
             word, word_vectors, char_vectors, 4, gate_params_cross)
     
-    # # 保存加法融合结果
-    # with open("addition_word_vectors.txt", 'w', encoding='utf-8') as file:
-    #     file.write(f"{len(addition_word_vectors)} {d_word}\n")
-    #     for word, vec in addition_word_vectors.items():
-    #         vec_str = ' '.join(f"{x:.6f}" for x in vec)
-    #         file.write(f"{word} {vec_str}\n")
+    # 保存加法融合结果
+    with open("results/addition_word_vectors.txt", 'w', encoding='utf-8') as file:
+        file.write(f"{len(addition_word_vectors)} {d_word}\n")
+        for word, vec in addition_word_vectors.items():
+            vec_str = ' '.join(f"{x:.6f}" for x in vec)
+            file.write(f"{word} {vec_str}\n")
     
-    # # 保存拼接融合结果
-    # with open("concatenation_word_vectors.txt", 'w', encoding='utf-8') as file:
-    #     new_dim = d_word + d_char
-    #     file.write(f"{len(concatenation_word_vectors)} {new_dim}\n")
-    #     for word, vec in concatenation_word_vectors.items():
-    #         vec_str = ' '.join(f"{x:.6f}" for x in vec)
-    #         file.write(f"{word} {vec_str}\n")
+    # 保存拼接融合结果
+    with open("results/concatenation_word_vectors.txt", 'w', encoding='utf-8') as file:
+        new_dim = d_word + d_char
+        file.write(f"{len(concatenation_word_vectors)} {new_dim}\n")
+        for word, vec in concatenation_word_vectors.items():
+            vec_str = ' '.join(f"{x:.6f}" for x in vec)
+            file.write(f"{word} {vec_str}\n")
     
     # 保存向量级门控融合结果
-    with open("gated_vector_word_vectors.txt", 'w', encoding='utf-8') as file:
+    with open("results/gated_vector_word_vectors.txt", 'w', encoding='utf-8') as file:
         file.write(f"{len(gated_vector_word_vectors)} {d_word}\n")
         for word, vec in gated_vector_word_vectors.items():
             vec_str = ' '.join(f"{x:.6f}" for x in vec)
             file.write(f"{word} {vec_str}\n")
     
     # 保存特征交叉融合结果
-    with open("gated_cross_word_vectors.txt", 'w', encoding='utf-8') as file:
+    with open("results/gated_cross_word_vectors.txt", 'w', encoding='utf-8') as file:
         file.write(f"{len(gated_cross_word_vectors)} {d_word}\n")
         for word, vec in gated_cross_word_vectors.items():
             vec_str = ' '.join(f"{x:.6f}" for x in vec)
             file.write(f"{word} {vec_str}\n")
     
     # 保存门控参数（用于后续分析或微调）
-    np.savez("gate_parameters.npz", 
+    np.savez("results/gate_parameters.npz", 
              W_proj_vec=gate_params_vector['W_proj'],
              b_proj_vec=gate_params_vector['b_proj'],
              W_gate=gate_params_vector['W_gate'],
